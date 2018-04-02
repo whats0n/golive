@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>008-MCGL-OnDemand-DetalledeEpisodio</title>
+    <title>015-MCGL-MiMC-MisGrabaciones</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=1280, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
@@ -14,7 +14,7 @@
     <!-- BEGIN content -->
     <div class="page">
       <div class="out">
-        <header class="header js-header  ">
+        <header class="header js-header  header_submenu">
           <div class="container">
             <div class="header__inner">
               <div class="header__form js-search-form">
@@ -26,9 +26,16 @@
               <div class="header__logo"> <a href="#"><img src="img/logo.svg" alt="McGoLive"></a> </div>
               <div class="header__nav">
                 <ul class="nav">
-                  <li><a href="#" class="nav__link is-active">EN VIVO</a></li>
+                  <li><a href="#" class="nav__link" class="nav__link">EN VIVO</a></li>
                   <li><a href="#" class="nav__link">ON DEMAND</a></li>
-                  <li><a href="#" class="nav__link">MI MC</a></li>
+                  <li> <a href="#" class="nav__link is-active">MI MC</a>
+                    <ul>
+                      <li><a href="#" class="nav__link ">Mis Alquileres</a></li>
+                      <li><a href="#" class="nav__link ">Mis Favoritos</a></li>
+                      <li><a href="#" class="nav__link is-active">Mis Grabaciones</a></li>
+                      <li><a href="#" class="nav__link ">Mis Recordatorios</a></li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
               <div class="header__controls">
@@ -57,51 +64,92 @@
             </div>
           </div>
         </header>
-        <div class="breadcrumbs">
+        <section class="section section_lg">
           <div class="container">
-            <ul class="breadcrumbs__list">
-              <li class="breadcrumbs__icon"> <svg class="icon icon-prev "><use xlink:href="img/sprite.svg#icon-prev"></use></svg> </li>
-              <li><a href="#">Series</a></li>
-              <li><a href="#">Game of Thrones</a></li>
-            </ul>
-          </div>
-        </div>
-        <section class="section">
-          <div class="container">
-            <div class="movie movie_links">
-              <div class="movie__side">
-                <div class="movie__image" style="background-image: url('img/got2.jpg')"></div>
-                <div class="movie__links"> <a href="#">
-<svg class="icon icon-prev "><use xlink:href="img/sprite.svg#icon-prev"></use></svg>
- Episodio Anterior</a> <a href="#">Episodio Siguiente 
-<svg class="icon icon-next "><use xlink:href="img/sprite.svg#icon-next"></use></svg>
-</a> </div>
-              </div>
-              <div class="movie__info">
-                <div class="info info_big">
-                  <div class="info__heading">
-                    <div class="info__title">Game of Thrones</div>
-                    <div class="info__subtitle">7 Temporadas</div>
+            <div class="section__title">
+              <h2 class="h2">MIS GRABACIONES</h2>
+              <div class="select"> <select class="select">
+    
+    <option value="Todas las Categorias">Todas las Categorias</option>
+    
+    <option value="Item 1">Item 1</option>
+    
+    <option value="Item 2">Item 2</option>
+    
+    <option value="Item 3">Item 3</option>
+    
+  </select> </div>
+            </div>
+            <div class="section__body">
+              <div class="items js-items">
+                <div class="items__title title">
+                  <h3 class="h3">Películas</h3>
+                  <div class="items__change change js-change">
+                    <div class="change__edit js-change-edit-parent"> <a href="#" class="link js-change-edit">
+<svg class="icon icon-pencil "><use xlink:href="img/sprite.svg#icon-pencil"></use></svg>
+ <span>Editar</span></a> </div>
+                    <div class="change__final"> <a href="#" class="link js-edit-cancel">
+<svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+ spann<span>Cancelar</span></a> <a href="#" class="link is-active js-edit-save">
+<svg class="icon icon-done "><use xlink:href="img/sprite.svg#icon-done"></use></svg>
+ <span>Guardar</span></a> </div>
                   </div>
-                  <div class="info__text js-ellipsis-parent">
-                    <h5>DRAMA | 52 MIN | 200</h5>
-                    <div class="info__about js-ellipsis"> Con los ejércitos frente a frente, Lagertha trata por última vez de alcanzar la paz con Ivar. Floki propone la construcción de un templo que enfrentará a los nuevos colonos y Alfred tiene interesante interesanteinteresante Con los
-                      ejércitos frente a frente, Lagertha trata por última vez de alcanzar la paz con Ivar. Floki propone la construcción de un templo que enfrentará a los nuevos colonos y Alfred tiene interesantes…Con los ejércitos frente a frente, Lagertha
-                      trata por última vez de alcanzar la paz con Ivar. Floki propone la construcción de un templo que enfrentará. </div> <button class="info__more js-ellipsis-toggle"></button> </div>
                 </div>
-                <div class="movie__footer">
-                  <div class="movie__footer-text">SIN CARGO</div>
-                  <div class="movie__btns"> <button class="btn  ">
-  <div class="btn__icon">
-<svg class="icon icon-play "><use xlink:href="img/sprite.svg#icon-play"></use></svg>
-</div>
-  
-</button> <button class="btn  ">
-  <div class="btn__icon">
-<svg class="icon icon-heart "><use xlink:href="img/sprite.svg#icon-heart"></use></svg>
-</div>
-  
-</button> </div>
+                <div class="items__gallery">
+                  <div class="row row_mb row_inline">
+                    <div class="col-4">
+                      <div class="item  js-item">
+                        <div class="item__top">
+                          <a href="#" class="item__img" style="background-image: url('img/lalaland.jpg');">
+                            <div class="item__play play"></div>
+                          </a> <a href="#" class="item__delete">
+<svg class="icon icon-delete "><use xlink:href="img/sprite.svg#icon-delete"></use></svg>
+</a> </div> <a href="#" class="item__name">
+    <span>Logan</span>
+  </a> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items js-items">
+                <div class="items__title title">
+                  <h3 class="h3">Culturales</h3>
+                  <div class="items__change change js-change">
+                    <div class="change__edit js-change-edit-parent"> <a href="#" class="link js-change-edit">
+<svg class="icon icon-pencil "><use xlink:href="img/sprite.svg#icon-pencil"></use></svg>
+ <span>Editar</span></a> </div>
+                    <div class="change__final js-edit-final"> <a href="#" class="link js-edit-cancel">
+<svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+ spann<span>Cancelar</span></a> <a href="#" class="link is-active js-edit-save">
+<svg class="icon icon-done "><use xlink:href="img/sprite.svg#icon-done"></use></svg>
+ <span>Guardar</span></a> </div>
+                  </div>
+                </div>
+                <div class="items__gallery">
+                  <div class="row row_mb row_inline">
+                    <div class="col-4">
+                      <div class="item  js-item">
+                        <div class="item__top">
+                          <a href="#" class="item__img" style="background-image: url('img/got2.jpg');">
+                            <div class="item__play play"></div>
+                          </a> <a href="#" class="item__delete">
+<svg class="icon icon-delete "><use xlink:href="img/sprite.svg#icon-delete"></use></svg>
+</a> </div> <a href="#" class="item__name">
+    <span>T7 / E3 - La justicia de la reina</span>
+  </a> </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="item  js-item">
+                        <div class="item__top">
+                          <a href="#" class="item__img" style="background-image: url('img/got.jpg');">
+                            <div class="item__play play"></div>
+                          </a> <a href="#" class="item__delete">
+<svg class="icon icon-delete "><use xlink:href="img/sprite.svg#icon-delete"></use></svg>
+</a> </div> <a href="#" class="item__name">
+    <span>T7 / E4 - Los males de la guerra</span>
+  </a> </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

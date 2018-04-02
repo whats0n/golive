@@ -13,3 +13,19 @@ PageList:
   ready: 100
 - file: 006-MCGL-OnDemand-Categorías.html
   ready: 100
+- file: 007-MCGL-OnDemand-DetalledeSerie-SinCargo.html
+  ready: 100
+- file: 008-MCGL-OnDemand-DetalledeEpisodio.html
+  ready: 100
+- file: 009-MCGL-OnDemand-DetalledePelícula.html
+  ready: 100
+- file: 010-MCGL-OnDemand-DetalledePelícula.html
+  ready: 100
+- file: 011-MCGL-OnDemand-PlataformasPlay.html
+  ready: 100
+- file: 012-MCGL-MiMC-Misalquileres.html
+  ready: 100
+- file: 013-014-MCGL-MiMC-Misfavoritos1.html
+  ready: 100
+- file: 015-MCGL-MiMC-MisGrabaciones.html
+  ready: 100

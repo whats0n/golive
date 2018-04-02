@@ -1,0 +1,15 @@
+ProjectTitle: mc-go-live
+
+PageList:
+- file: 001-MCGL-Home.html
+  ready: 100
+- file: 002-MCGL-EnVivo-Default.html
+  ready: 100
+- file: 003-MCGL-EnVivo-Reproductor.html
+  ready: 100
+- file: 004-MCGL-EnVivo-Grilla.html
+  ready: 100
+- file: 005-MCGL-OnDemand-Default.html
+  ready: 100
+- file: 006-MCGL-OnDemand-Categorías.html
+  ready: 100

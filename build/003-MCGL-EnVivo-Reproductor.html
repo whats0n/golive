@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>003-MCGL-EnVivo-Reproductor</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=1280, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
     <link rel="stylesheet" media="all" href="css/app.css"> </head>
@@ -59,6 +59,35 @@
             </div>
           </div>
         </header>
+        <div class="header-mob">
+          <div class="header-mob__inner">
+            <div class="header-mob__btn"> <button type="button" class="btn-burger js-show-mob-menu">
+        <i></i>
+        <i></i>
+        <i></i>
+      </button> </div>
+            <div class="header-mob__logo"> <a href="#"><img src="img/logo.svg" alt="McGoLive"></a> </div>
+            <div class="header-mob__search">
+              <div class="header-mob__search-btn js-search-mob-btn" role="button"> <svg class="icon icon-search "><use xlink:href="img/sprite.svg#icon-search"></use></svg> </div>
+            </div>
+          </div>
+          <div class="header-mob__menu js-mob-menu">
+            <div href="#" class="header-mob__link"> <a href="#"> En Vivo</a> </div>
+            <div href="#" class="header-mob__link"> <a href="#"> On Demand</a> </div>
+            <div href="#" class="header-mob__link"> <a href="#">Mi Mc</a> </div>
+            <div href="#" class="header-mob__link js-submenu-parent"> <a href="#" class="js-toggle-submenu">Perfil 
+<svg class="icon icon-chevron "><use xlink:href="img/sprite.svg#icon-chevron"></use></svg>
+</a>
+              <div class="header-mob__submenu js-submenu"> <a class="header-mob__submenu-link">Cuenta</a> <a class="header-mob__submenu-link">Gestionar Dispositiv</a> <a class="header-mob__submenu-link">Gestionar Perfiles</a> <a class="header-mob__submenu-link">Control Parental</a> <a class="header-mob__submenu-link">Cerrar Sesión</a>                </div>
+            </div>
+          </div>
+          <div class="header-mob__search-form js-search-mob">
+            <form class="s-form">
+              <div class="s-form__icon"> <svg class="icon icon-search "><use xlink:href="img/sprite.svg#icon-search"></use></svg> </div> <input class="s-form__input" type="text" placeholder="Buscar..."> <button class="s-form__close js-search-mob-close" type="button">
+<svg class="icon icon-close "><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+</button> </form>
+          </div>
+        </div>
         <section class="section">
           <div class="container">
             <div class="section__title">
@@ -71,9 +100,60 @@
                   <div class="gallery">
                     <div class="gallery__slider">
                       <div class="gallery__slider-main js-v-slider">
-                        <div class="gallery__item" style="background-image: url('img/slider.jpg');"> <a href="#" class="gallery__play play play_big"></a> </div>
-                        <div class="gallery__item" style="background-image: url('img/got.jpg');"> <a href="#" class="gallery__play play play_big"></a> </div>
-                        <div class="gallery__item" style="background-image: url('img/toy.jpg');"> <a href="#" class="gallery__play play play_big"></a> </div>
+                        <div class="gallery__item-wrap">
+                          <div class="gallery__item" style="background-image: url('img/slider.jpg');">
+                            <a href="#" class="gallery__play">
+                              <div class="gallery__play-cover play play_big"></div>
+                              <div class="gallery__play-icon"> <span class="btn btn_circle ">
+
+  
+  <div class="btn__icon">
+<svg class="icon icon-fullscreen "><use xlink:href="img/sprite.svg#icon-fullscreen"></use></svg>
+</div>
+  
+
+</span>
+                                <!-- btnIcon END -->
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="gallery__item-wrap">
+                          <div class="gallery__item" style="background-image: url('img/got.jpg');">
+                            <a href="#" class="gallery__play">
+                              <div class="gallery__play-cover play play_big"></div>
+                              <div class="gallery__play-icon"> <span class="btn btn_circle ">
+
+  
+  <div class="btn__icon">
+<svg class="icon icon-fullscreen "><use xlink:href="img/sprite.svg#icon-fullscreen"></use></svg>
+</div>
+  
+
+</span>
+                                <!-- btnIcon END -->
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="gallery__item-wrap">
+                          <div class="gallery__item" style="background-image: url('img/toy.jpg');">
+                            <a href="#" class="gallery__play">
+                              <div class="gallery__play-cover play play_big"></div>
+                              <div class="gallery__play-icon"> <span class="btn btn_circle ">
+
+  
+  <div class="btn__icon">
+<svg class="icon icon-fullscreen "><use xlink:href="img/sprite.svg#icon-fullscreen"></use></svg>
+</div>
+  
+
+</span>
+                                <!-- btnIcon END -->
+                              </div>
+                            </a>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div class="gallery__controls">
@@ -104,7 +184,8 @@
                             <div class="progress__line"> <i style="width: 65%"></i> </div> <span>11:30 AM</span> </div>
                           <!-- progress END -->
                         </div>
-                        <div class="info__buttons"> <button class="btn  ">
+                        <div class="info__buttons info__buttons_mod">
+                          <div class="info__button"> <button class="btn  ">
 
   
   <div class="btn__icon">
@@ -115,8 +196,10 @@
   
 
 </button>
-                          <!-- btnIcon END -->
-                          <!-- btnIcon START --><label class="btn  ">
+                            <!-- btnIcon END -->
+                          </div>
+                          <div class="info__button">
+                            <!-- btnIcon START --><label class="btn  ">
 
   
   <input type="checkbox" class="btn__checkbox">
@@ -129,7 +212,9 @@
   
 
 </label>
-                          <!-- btnIcon END --><button class="btn  ">
+                            <!-- btnIcon END -->
+                          </div>
+                          <div class="info__button"> <button class="btn  ">
 
   
   <div class="btn__icon">
@@ -140,7 +225,9 @@
   
 
 </button>
-                          <!-- btnIcon END --><button class="btn  ">
+                            <!-- btnIcon END -->
+                          </div>
+                          <div class="info__button"> <button class="btn  ">
 
   
   <div class="btn__icon">
@@ -151,7 +238,9 @@
   
 
 </button>
-                          <!-- btnIcon END --><button class="btn  ">
+                            <!-- btnIcon END -->
+                          </div>
+                          <div class="info__button"> <button class="btn  ">
 
   
   <div class="btn__icon">
@@ -162,7 +251,9 @@
   
 
 </button>
-                          <!-- btnIcon END --><button class="btn  ">
+                            <!-- btnIcon END -->
+                          </div>
+                          <div class="info__button"> <button class="btn  ">
 
   
   <div class="btn__icon">
@@ -173,7 +264,8 @@
   
 
 </button>
-                          <!-- btnIcon END -->
+                            <!-- btnIcon END -->
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -583,21 +675,16 @@
       <footer class="footer">
         <div class="container">
           <div class="footer__left"> <a href="#">
-        <img src="img/logoMC.svg" alt="Montecable">
+        <img src="img/logoMC.svg" alt="Montecable" class="footer__mc">
       </a> </div>
           <div class="footer__right"> <a href="#">
-        <img src="img/by-iugo-negativo.svg" alt="By IUGO">
+        <img src="img/by-iugo-negativo.svg" alt="By IUGO" class="footer__by">
       </a> </div>
           <div class="footer__center">
             <div class="footer__info">
               <div class="footer__text">
                 <p>©2018 - MCGoLive - Montecable - 18 de Julio 1216 - <a href="tel:+59829090000">+598 2 909 0000</a> - Montevideo, Uruguay</p>
                 <p><a href="#">Ayuda</a> - <a href="#">Términos y condiciones</a> - ¿Tienes problemas? <a href="#">Contactanos</a></p>
-                <!-- <ul class="footer__list">
-              <li><a href="#">Ayuda</a></li>
-              <li><a href="#">Términos y condiciones</a></li>
-              <li>¿Tienes problemas? <a href="#">Contactanos</a></li>
-            </ul> -->
               </div>
               <div class="footer__soc">
                 <ul class="soc">

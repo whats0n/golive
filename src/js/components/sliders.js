@@ -17,7 +17,19 @@ $('.js-slider').slick({
   slider.slick({
     vertical: true,
     prevArrow: '.js-v-slider-prev',
-    nextArrow: '.js-v-slider-next'
+    nextArrow: '.js-v-slider-next',
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          vertical: false
+        }
+      }
+    ]
+  });
+
+  $(window).on('resize', () => {
+    slider.slick('resize');
   });
 
   slider.on('beforeChange', function(e, slick, currentSlide, nextSlide) {
@@ -35,8 +47,19 @@ $('.js-slider').slick({
 }
 
 // items slider
-$('.js-items-gallery').slick({
-  arrows: true,
-  slidesToShow: 4,
-  infinite: false
-});
+{
+  $('.js-items-gallery').slick({
+    arrows: true,
+    slidesToShow: 4,
+    infinite: false,
+    responsive: [
+      {
+        breakpoint: 1023,
+        settings: 'unslick'
+      }
+    ]
+  });
+  $(window).on('resize', () => {
+    $('.js-items-gallery').slick('resize');
+  });
+}

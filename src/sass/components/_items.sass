@@ -1,16 +1,47 @@
 .chapter
+	margin: 0 -10px
+	+md
+		// margin-right: -20px
+		margin: 0
+	+sm
+		// margin-right: -30px
+		margin: 0
 	&:not(:last-child)
 		margin-bottom: 62px
+		+sm
+			margin-bottom: 15px
 	&__gallery
 		&:not(.slick-initialized)
 			white-space: nowrap
-			overflow: hidden
+			+from-md
+				overflow: hidden
+			+md
+				padding-bottom: 20px
+				margin: 0 -20px
+			+xs
+				margin: 0 -30px
+			.chapter__slide
+				padding: 0 15px
+				+md
+					&:first-child
+						padding-left: 20px
+					&:last-child
+						padding-right: 20px
+				+sm
+					padding: 0 10px
+					&:first-child
+						padding-left: 30px
+					&:last-child
+						padding-right: 30px
 			.item
 				white-space: normal
+		+md
+			overflow: auto
+			margin-left: 10px
 	.slick-slide
-		padding: 0 15px
-	.slick-list
-		margin: 0 -15px
+		> div
+			margin: 0 10px
+		+r(1100)
 	.slick-arrow
 		position: absolute
 		width: 45px
@@ -23,32 +54,47 @@
 	.slick-prev
 		left: -24px
 		background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iNDUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxwYXRoIGQ9Ik0xMjA3LjcwNyAxODJhLjU5NS41OTUgMCAxIDEtLjI1IDEuMTY0bC0xOS42LTQuMjA5YS41OTUuNTk1IDAgMCAxLS40NTctLjQ1N2wtNC4yMDktMTkuNmEuNTk1LjU5NSAwIDEgMSAxLjE2NC0uMjVsNC4xMjggMTkuMjI0IDE5LjIyNCA0LjEyOHoiIGlkPSJiIi8+PGZpbHRlciB4PSItNTIlIiB5PSItNTIlIiB3aWR0aD0iMjA0JSIgaGVpZ2h0PSIyMDQlIiBmaWx0ZXJVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIGlkPSJhIj48ZmVPZmZzZXQgZHk9IjEiIGluPSJTb3VyY2VBbHBoYSIgcmVzdWx0PSJzaGFkb3dPZmZzZXRPdXRlcjEiLz48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIyLjUiIGluPSJzaGFkb3dPZmZzZXRPdXRlcjEiIHJlc3VsdD0ic2hhZG93Qmx1ck91dGVyMSIvPjxmZUNvbG9yTWF0cml4IHZhbHVlcz0iMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMSAwIiBpbj0ic2hhZG93Qmx1ck91dGVyMSIgcmVzdWx0PSJzaGFkb3dNYXRyaXhPdXRlcjEiLz48ZmVPZmZzZXQgZHk9Ii0xIiBpbj0iU291cmNlQWxwaGEiIHJlc3VsdD0ic2hhZG93T2Zmc2V0T3V0ZXIyIi8+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMi41IiBpbj0ic2hhZG93T2Zmc2V0T3V0ZXIyIiByZXN1bHQ9InNoYWRvd0JsdXJPdXRlcjIiLz48ZmVDb2xvck1hdHJpeCB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAuMDA3ODQzMTM3MjUgMCAwIDAgMCAwLjAxNTY4NjI3NDUgMCAwIDAgMSAwIiBpbj0ic2hhZG93Qmx1ck91dGVyMiIgcmVzdWx0PSJzaGFkb3dNYXRyaXhPdXRlcjIiLz48ZmVNZXJnZT48ZmVNZXJnZU5vZGUgaW49InNoYWRvd01hdHJpeE91dGVyMSIvPjxmZU1lcmdlTm9kZSBpbj0ic2hhZG93TWF0cml4T3V0ZXIyIi8+PC9mZU1lcmdlPjwvZmlsdGVyPjwvZGVmcz48ZyB0cmFuc2Zvcm09InJvdGF0ZSg0NSA3ODQuODMgLTEzMjYuNTAxKSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSJub25lIj48dXNlIGZpbGw9IiMwMDAiIGZpbHRlcj0idXJsKCNhKSIgeGxpbms6aHJlZj0iI2IiLz48dXNlIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgeGxpbms6aHJlZj0iI2IiLz48L2c+PC9zdmc+)
+		+lg
+			left: -13px
 	.slick-next
 		right: -26px
 		background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iNDUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxwYXRoIGQ9Ik0xMjA3LjcwNyAxODJhLjU5NS41OTUgMCAxIDEtLjI1IDEuMTY0bC0xOS42LTQuMjA5YS41OTUuNTk1IDAgMCAxLS40NTctLjQ1N2wtNC4yMDktMTkuNmEuNTk1LjU5NSAwIDEgMSAxLjE2NC0uMjVsNC4xMjggMTkuMjI0IDE5LjIyNCA0LjEyOHoiIGlkPSJiIi8+PGZpbHRlciB4PSItNTIlIiB5PSItNTIlIiB3aWR0aD0iMjA0JSIgaGVpZ2h0PSIyMDQlIiBmaWx0ZXJVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIGlkPSJhIj48ZmVPZmZzZXQgZHk9IjEiIGluPSJTb3VyY2VBbHBoYSIgcmVzdWx0PSJzaGFkb3dPZmZzZXRPdXRlcjEiLz48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIyLjUiIGluPSJzaGFkb3dPZmZzZXRPdXRlcjEiIHJlc3VsdD0ic2hhZG93Qmx1ck91dGVyMSIvPjxmZUNvbG9yTWF0cml4IHZhbHVlcz0iMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMSAwIiBpbj0ic2hhZG93Qmx1ck91dGVyMSIgcmVzdWx0PSJzaGFkb3dNYXRyaXhPdXRlcjEiLz48ZmVPZmZzZXQgZHk9Ii0xIiBpbj0iU291cmNlQWxwaGEiIHJlc3VsdD0ic2hhZG93T2Zmc2V0T3V0ZXIyIi8+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMi41IiBpbj0ic2hhZG93T2Zmc2V0T3V0ZXIyIiByZXN1bHQ9InNoYWRvd0JsdXJPdXRlcjIiLz48ZmVDb2xvck1hdHJpeCB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAuMDA3ODQzMTM3MjUgMCAwIDAgMCAwLjAxNTY4NjI3NDUgMCAwIDAgMSAwIiBpbj0ic2hhZG93Qmx1ck91dGVyMiIgcmVzdWx0PSJzaGFkb3dNYXRyaXhPdXRlcjIiLz48ZmVNZXJnZT48ZmVNZXJnZU5vZGUgaW49InNoYWRvd01hdHJpeE91dGVyMSIvPjxmZU1lcmdlTm9kZSBpbj0ic2hhZG93TWF0cml4T3V0ZXIyIi8+PC9mZU1lcmdlPjwvZmlsdGVyPjwvZGVmcz48ZyB0cmFuc2Zvcm09InJvdGF0ZSgtMTM1IDU3MC4wMjYgMzQzLjEzNSkiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0ibm9uZSI+PHVzZSBmaWxsPSIjMDAwIiBmaWx0ZXI9InVybCgjYSkiIHhsaW5rOmhyZWY9IiNiIi8+PHVzZSBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHhsaW5rOmhyZWY9IiNiIi8+PC9nPjwvc3ZnPg==)
+		+lg
+			right: -15px
 	&__title
-		margin-bottom: 30px
 		display: flex
 		justify-content: space-between
 		align-items: flex-end
+		margin: 0 10px 30px
+		// margin-bottom: 30px
+		+md
+			margin-left: 0
+			margin-right: 0
+			// margin-right: 20px
+		+sm
+			// margin-right: 30px
+			// margin-bottom: 20px
 	&__change
 		line-height: 1.4
 	&__slide
 		display: inline-block
 		vertical-align: top
-		&:not(:last-child)
-			margin-right: 30px
+		.item
+			min-width: 230px
+			+md
+				min-width: 0
+				width: 210px
+			+sm
+				width: 193px
 
 .chapter_sm
 	&:not(:last-child)
 		margin-bottom: 50px
 
-
 .item
 	$this: &
 
 	display: block
-	min-width: 276px
 	padding-bottom: 5px
 	&.is-removable
 		#{$this}__delete
@@ -59,6 +105,8 @@
 		margin-bottom: 20px
 		border-radius: 4px
 		overflow: hidden
+		+sm
+			height: 147px
 	&__img
 		display: block
 		height: 100%

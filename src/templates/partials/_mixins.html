@@ -2,12 +2,12 @@
 <svg class="icon icon-{{i}} {{class}}"><use xlink:href="img/sprite.svg#icon-{{i}}"></use></svg>
 {% endmacro %}
 
-{% macro btnIcon(iconName, text, circle=false, class="", checkbox=false) %}
+{% macro btnIcon(iconName, text, circle=false, class="", checkbox=false, tag="button") %}
 {% if checkbox %}
 <!-- btnIcon START -->
 <label class="btn {% if circle%}btn_circle{%endif%} {{class}}">
 {% else %}
-<button class="btn {% if circle%}btn_circle{%endif%} {{class}}">
+<{{tag}} class="btn {% if circle%}btn_circle{%endif%} {{class}}">
 {% endif %}
   {% if checkbox%}
   <input type="checkbox" class="btn__checkbox">
@@ -19,7 +19,7 @@
 {% if checkbox %}
 </label>
 {% else %}
-</button>
+</{{tag}}>
 {% endif %}
 <!-- btnIcon END -->
 {% endmacro %}
@@ -57,7 +57,7 @@
   {% if title %}
   <div class="select__title">{{title | safe}}</div>
   {% endif %}
-  <select class="select">
+  <select>
     {% for option in options %}
     <option value="{{option}}">{{option}}</option>
     {% endfor %}
@@ -132,9 +132,9 @@
   </div>
   <div class="chapter__gallery js-items-gallery">
     {% for i in items %}
-      <div class="chapter__slide">
-        {{item(i.name, i.img)}}
-      </div>
+    <div class="chapter__slide">
+      {{item(i.name, i.img)}}
+    </div>
     {% endfor %}
   </div>
 </div>

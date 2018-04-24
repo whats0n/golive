@@ -18,7 +18,11 @@
 			align-items: flex-start
 			flex-direction: column
 		h2, .h2, h3, .h3
-			flex: 1 0 auto
+			flex: 1 1 auto
+			+from-xs
+				padding-right: 25px
+	&__title_sm
+		margin-bottom: 30px
 	&__meta
 		margin-top: 3px
 	&__btns
@@ -50,6 +54,8 @@
 			padding-bottom: 40px
 	&__empty
 		padding-top: 78px
+		+xs
+			padding-top: 40px
 	&__sel
 		+xs
 			width: 100%
@@ -61,6 +67,8 @@
 			white-space: nowrap
 			overflow: auto
 			margin: 0 -20px
+			> *
+				white-space: normal
 		+sm
 			margin: 0 -30px
 	&__item
@@ -86,9 +94,25 @@
 				padding-right: 30px
 			.item
 				width: 193px
+	&__body_form
+		.section__body-row
+			+from-md
+				&:not(:last-child)
+					padding-bottom: 40px
+	&__body-row
+		&:not(:last-child)
+			+md
+				padding-bottom: 20px
+	&__change
+		line-height: 1.7
+		+xs
+			margin-top: 10px
 
 .section_lg
 	padding-bottom: 80px
+
+.section_no-pb
+	padding-bottom: 0
 
 .section_md
 	padding-bottom: 40px

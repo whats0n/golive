@@ -5,11 +5,11 @@ import './components';
 svg4everybody();
 
 {
-  const cloneParent = $('.js-copy');
-  const cloneItems = cloneParent.find('> .card').clone();
-  $('.js-show-more-blocks').on('click', (e) => {
-    cloneParent.append(cloneItems.clone());
+    const cloneParent = $('.js-copy');
+    const cloneItems = cloneParent.find('> .card').clone();
+    $('.js-show-more-blocks').on('click', (e) => {
+        cloneParent.append(cloneItems.clone());
 
-    e.preventDefault();
-  });
+        e.preventDefault();
+    });
 }

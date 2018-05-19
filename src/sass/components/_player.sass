@@ -6,34 +6,61 @@
 	height: 100%
 	min-width: 320px
 	z-index: 99
-	background: #0f1d2b
+	+clr
 	&__video
 		position: relative
-		height: 100%
+		height: calc(100% - 120px)
 		overflow: hidden
 		background: #000
 		display: flex
+		.player.is-open-sidebar &
+			width: calc(100% - 320px)
 		video
 			width: 100%
 			height: 100%
 			max-width: 100%
 			max-height: 100%
 			margin: auto
+	&__sidebar
+		position: absolute
+		top: 0
+		right: -320px
+		bottom: 120px
+		width: 320px
+		background-color: #0c1013
+		border-bottom: 1px solid #000
+		+sm
+			z-index: 100
+			right: 0
+			left: 0
+			width: auto
+			opacity: 0
+			visibility: hidden
+		.player.is-open-sidebar &
+			transform: translateX(-320px)
+			+sm
+				transform: translateX(0)
+				opacity: 1
+				visibility: visible
 	&__back
 		position: absolute
 		top: 40px
 		left: 40px
 		z-index: 10
 		+sm
-			top: 20px
-			left: 20px
+			top: 12px
+			left: 16px
+			.btn_circle
+				width: 28px
+				height: 28px
+				.icon
+					font-size: 7px
 	&__bottom
 		position: absolute
 		bottom: 0
 		left: 0
 		right: 0
 		z-index: 2
-		background: #0f1d2b
 	&__controls
 		display: flex
 		margin-top: auto
@@ -57,9 +84,9 @@
 			width: 100%
 			max-width: 320px
 	&__btn
-		padding: 10px
+		padding: 7px 10px
 		+sm
-			padding: 0
+			padding-left: 0
 	&__body
 		flex: 1
 		font-size: 14px
@@ -67,37 +94,89 @@
 		font-weight: 300
 	&__top
 		min-width: 60px
-		padding: 10px 38px
-		background: #0c1722
+		padding: 0px 38px 0 29px
 		display: flex
 		justify-content: space-between
 		align-items: center
 		+sm
-			padding-left: 20px
-			padding-right: 20px
+			padding-left: 10px
+			padding-right: 10px
+		.player.is-open-sidebar &
+			width: calc(100% - 320px)
+	&__progress
+		.player.is-open-sidebar &
+			width: calc(100% - 320px)
+	&__top-wrap
+		display: flex
+		align-items: center
+	&__sound
+		margin-left: 17px
 	&__time
 		color: #9fa4aa
 	&__schedule
-		padding: 30px 38px
+		display: flex
+		justify-content: space-between 
+		background-color: #0F1D2B 
+	&__info
+		padding: 31px 25px 31px 42px
+		display: flex
+		width: 100%
+		align-items: center
+		justify-content: space-between
 		+sm
-			padding: 10px 60px 10px 20px
+			padding: 13px 13px 16px 13px
+			width: calc(100% - 70px) 
+	&__btn-open
+		padding: 12px 11px
+		+med
+		font-weight: 500
+		color: #FFF 
+		text-transform: uppercase
+		vertical-align: top
+		border-radius: 4px
+		border: 1px solid #fff
+		transition: background-color .3s, border-color .3s, color .3s
+		background-color: transparent 
+		display: inline-block
+		.player.is-open-sidebar &
+			background-color: rgba(66,191,254,0.10)
+			border-color: #42BFFE
+			color: #42BFFE 
+			svg path
+				fill: #42BFFE 
+		&:hover
+			background-color: rgba(66,191,254,0.10)
+			border-color: #42BFFE
+			color: #42BFFE 
+			svg path
+				fill: #42BFFE 
+		svg path
+			transition: fill .3s
 	&__channel
 		display: inline-block
 		vertical-align: top
-		margin-right: 30px
+		margin-right: 26px
 		img
 			max-width: 100%
 		+md
 			margin-right: 15px
 		+sm
-			width: 42px
-			vertical-align: middle
+			margin-bottom: 2px
+			width: 41px
+			display: block
 	&__list
 		display: inline-block
 		vertical-align: top
 		+sm
-			max-width: calc(100% - 65px)
-			vertical-align: middle
+			display: none
+	&__track-mob.track
+		display: none
+		&:after
+			display: none
+		+sm
+			width: calc(100% - 10px)
+			display: table
+			background-color: transparent 
 	&__programm
 		position: relative
 		color: #9fa4aa
@@ -108,15 +187,15 @@
 		a
 			color: inherit
 		&:not(:last-child)
-			padding-bottom: 10px
-			margin-bottom: 10px
+			padding-bottom: 17px
+			margin-bottom: 5px
 			&:after
 				content: ''
 				position: absolute
 				bottom: 0
 				left: 0
 				width: 20px
-				height: 2px
+				height: 1px
 				background: #9fa4aa
 		&.is-active
 			font-weight: 500
@@ -142,33 +221,231 @@
 			display: block
 			margin-bottom: 7px
 	&__arrows
-		flex: 0 0 113px
+		position: relative
+		flex: 0 0 101px
 		border-left: 1px solid #000
 		display: flex
 		flex-direction: column
 		justify-content: space-between
 		align-items: center
-		padding: 15px 10px
-		+from-sm
-			flex: 0 0 113px
-		+sm
+		padding: 11px 10px 9px
+		&:before
 			position: absolute
+			content: "" 
+			top: 50%
+			left: 0
 			right: 0
-			bottom: 0
-			height: 74px
-			padding-top: 5px
-			padding-bottom: 5px
-			.btn-arr
-				width: 30px
-				height: 30px
+			height: 1px
+			background-color: #000 
+		+sm
+			flex: 0 0 70px
 			.btn-arr_top
 				i
-					border-width: 0 12px 15px
+					border-width: 0 10px 13px
 			.btn-arr_bottom
 				i
-					border-width: 15px 12px 0
+					border-width: 13px 10px 0
 	&__additional
 		+sm
 			.btn + .btn
 				margin-left: 10px
 
+.sound
+	height: 10px
+	line-height: 10px
+	font-size: 0
+	vertical-align: top
+	display: inline-block
+	&__loudspeaker,
+	&__size
+		vertical-align: middle
+		display: inline-block
+	&__loudspeaker
+		color: #FFF
+		cursor: pointer
+		background-color: transparent  
+		.icon
+			font-size: 10px
+	&__size
+		position: relative
+		margin-left: 5px
+		width: 58px
+		height: 2px
+		border-radius: 2px 
+		cursor: pointer
+		background-color: #FFF 
+	&__value
+		position: absolute
+		left: 0
+		top: 0
+		bottom: 0
+		background-color: #42BFFE 
+		border-radius: 2px 
+		&:before
+			position: absolute
+			content: "" 
+			top: -2px
+			left: 100%
+			width: 6px
+			height: 6px
+			cursor: pointer
+			border-radius: 6px
+			background-color: #42BFFE 
+		&:after
+			position: absolute
+			content: "" 
+			top: -5px
+			left: 100%
+			margin-left: -4px
+			height: 12px
+			width: 10px
+			cursor: pointer
+
+.player-tabs
+	&__list
+		position: relative
+		font-size: 0
+		background-color: #0b2638 
+		&:before
+			position: absolute
+			content: "" 
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background-color: rgba(#fff, .05) 
+	&__item
+		position: relative
+		z-index: 1
+		min-width: 115px
+		+reg
+		font-size: 14px
+		letter-spacing: 0.02em 
+		vertical-align: top
+		display: inline-block
+	&__link
+		position: relative
+		padding: 24px 15px
+		height: 60px
+		transition: color .3s
+		color: rgba(#FFF, .6) 
+		display: block
+		&:hover
+			color: #FFF 
+		.player-tabs__item.is-active &
+			color: #FFF 
+		&:before
+			position: absolute
+			content: "" 
+			left: 15px
+			bottom: 0
+			height: 2px
+			width: 20px
+			background-color: #FFF 
+			display: none
+			.player-tabs__item.is-active &
+				display: block
+	&__content
+		height: calc(100vh - 60px - 120px)
+		overflow: auto
+		display: none
+		&:hover
+			&::-webkit-scrollbar-track
+				background-color: #000 
+			&::-webkit-scrollbar-thumb
+				background-color: #42bffe
+		&::-webkit-scrollbar
+			width: 2px
+		&::-webkit-scrollbar-track
+			transition: background-color .3s
+			background-color: rgba(#000, 0) 
+		&::-webkit-scrollbar-thumb
+			transition: background-color .3s
+			background-color: rgba(#42bffe, 0)
+.track
+	position: relative
+	padding: 13px 14px 15px 14px
+	width: 100%
+	+pop
+	table-layout: fixed
+	cursor: pointer
+	display: table
+	transition: background-color .3s
+	background-color: #0B1B26 
+	&_mod
+		padding: 0
+	&:after
+		position: absolute
+		content: "" 
+		top: 0
+		left: 0
+		bottom: 0
+		width: 2px
+		opacity: 0
+		transition: opacity .3s
+		background-color: #FFF 
+	&:hover
+		background-color: #0C2738 
+		&:after
+			opacity: 1
+	&:not(:last-child)
+		margin-bottom: 1px
+	&__row
+		display: table-row
+	&__left
+		width: 42px
+		vertical-align: top
+		display: table-cell
+	&__wrap
+		padding-left: 14px
+		vertical-align: top
+		display: table-cell
+		.track_mod &
+			padding-left: 0
+	&__channel
+		padding: 8px
+		width: 42px
+		background-color: #000 
+	&__name
+		margin-bottom: 10px
+		+pop
+		font-size: 14px
+	&__subname
+		font-size: 14px
+		margin-top: 2px
+		color: rgba(#FFF, 0.6) 
+	&__title
+		margin-bottom: 6px
+		font-weight: 300 
+		text-transform: uppercase
+	&__text
+		font-weight: 300 
+		margin-bottom: 6px
+		font-size: 12px
+		line-height: 1.33
+		color: rgba(#FFF, 0.6) 
+	&__proggres
+		margin-bottom: 10px
+	&__times
+		display: flex
+		width: 100%
+		justify-content: space-between
+	&__time
+		opacity: 0.6
+		letter-spacing: 0.04em 
+.channel
+	text-align: center
+	overflow: hidden
+	font-size: 0
+	border-radius: 4px
+	border: 1px solid #1d384a
+	&__icon
+		margin-bottom: 3px
+		img
+			margin: 0 auto
+			max-width: 100%
+			display: block
+	&__text
+		+pop
+		font-size: 8px
+		line-height: 1

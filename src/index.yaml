@@ -7,6 +7,10 @@ PageList:
   ready: 100
 - file: 003-MCGL-EnVivo-Reproductor.html
   ready: 100
+- file: 003-MCGL-EnVivo-Reproductor-open.html
+  ready: 100
+- file: 003-MCGL-EnVivo-Reproductor-programacion.html
+  ready: 100
 - file: 004-MCGL-EnVivo-Grilla.html
   ready: 100
 - file: 005-MCGL-OnDemand-Default.html

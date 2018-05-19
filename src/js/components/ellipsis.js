@@ -1,53 +1,53 @@
 const ellipsis = {
-  init(el = $('.js-ellipsis')) {
+    init(el = $('.js-ellipsis')) {
 
-    el.each((i, item) => {
-      const target = $(item);
-      const text = target.find('> p');
-      const initialHeight = text.height();
-      const maxHeight = target.height();
-      const parent = target.closest('.js-ellipsis-parent');
-      const fullText = text.text();
-      const button = parent.find('.js-ellipsis-toggle');
-      let needButton = false;
+        el.each((i, item) => {
+            const target = $(item);
+            const text = target.find('> p');
+            const initialHeight = text.height();
+            const maxHeight = target.height();
+            const parent = target.closest('.js-ellipsis-parent');
+            const fullText = text.text();
+            const button = parent.find('.js-ellipsis-toggle');
+            let needButton = false;
 
-      initialHeight > maxHeight && (needButton = true);
-      if(!text.is(':visible')) {
-        parent.addClass('is-not-inited');
-        return false;
-      }
+            initialHeight > maxHeight && (needButton = true);
+            if(!text.is(':visible')) {
+                parent.addClass('is-not-inited');
+                return false;
+            }
 
-      while (text.height() > maxHeight) {
-        text.text(text.text().replace(/\W*\s(\S)*$/, '...'));
-      }
-      parent.removeClass('is-not-inited');
+            while (text.height() > maxHeight) {
+                text.text(text.text().replace(/\W*\s(\S)*$/, '...'));
+            }
+            parent.removeClass('is-not-inited');
 
-      if(needButton) {
-        parent.addClass('is-truncuted');
-        target.append('<div class="clone" />');
-        const clone = parent.find('.clone');
-        clone.text(fullText);
+            if(needButton) {
+                parent.addClass('is-truncuted');
+                target.append('<div class="clone" />');
+                const clone = parent.find('.clone');
+                clone.text(fullText);
 
-        button.on('click', function() {
-          parent.toggleClass('is-open');
+                button.on('click', function() {
+                    parent.toggleClass('is-open');
 
-          if(parent.hasClass('is-open')) {
-            text.hide();
-            clone.show();
+                    if(parent.hasClass('is-open')) {
+                        text.hide();
+                        clone.show();
 
-            target.animate( { height: `${initialHeight}px` }, { queue: false, duration: 300 });
-          } else {
-            target.animate( { height: '63px' }, { queue: false, duration: 300,
-              complete() {
-                text.show();
-                clone.hide();
-              } });
-          }
+                        target.animate( { height: `${initialHeight}px` }, { queue: false, duration: 300 });
+                    } else {
+                        target.animate( { height: '63px' }, { queue: false, duration: 300,
+                            complete() {
+                                text.show();
+                                clone.hide();
+                            } });
+                    }
+                });
+
+            }
         });
-
-      }
-    });
-  }
+    }
 };
 
 ellipsis.init();

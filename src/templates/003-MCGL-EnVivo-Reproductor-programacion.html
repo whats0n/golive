@@ -1,5 +1,5 @@
 ---
-title: 003-MCGL-EnVivo-Reproductor
+title: 003-MCGL-EnVivo-Reproductor-programacion
 blockButtons: true
 noScroll: true
 ---
@@ -33,7 +33,7 @@ noScroll: true
     </div>
   </section>
 
-  <div class="player">
+  <div class="player is-open-sidebar">
     <div class="player__sidebar">
       <div class="player-tabs">
         <ul class="player-tabs__list">
@@ -41,7 +41,7 @@ noScroll: true
           <li class="player-tabs__item"><a href="#" class="player-tabs__link">Programación</a></li>
         </ul>
         <div class="player-tabs__content" style="display: block;">
-          {% for value in [1,2,3,4,5,6] %}
+          {% for value in [1,2,3] %}
           <!-- begin track -->
           <div class="track">
             <div class="track__row">
@@ -52,7 +52,12 @@ noScroll: true
                 </div>
               </div>
               <div class="track__wrap">
-                <div class="track__name">Moonrise Kingdom</div>
+                <div class="track__name">
+                  Moonrise Kingdom
+                  <div class="track__subname">T5 / E8 - El chiste</div>
+                </div>
+                <div class="track__title">DRAMA | 52 MIN | 2001 | SD</div>
+                <div class="track__text">Con los ejércitos frente a frente, Lagertha trata por última vez de alcanzar la paz con Ivar. Floki propone la construcción de un templo que enfrentará a los nuevos colonos.</div>
                 <div class="track__proggres">
                   <div class="progress">
                     <div class="progress__line"> <i style="width: 65%"></i> </div>
